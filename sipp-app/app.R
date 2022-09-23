@@ -4,7 +4,7 @@ library(argonR)
 library(shinyjs)
 library(shinythemes)
 library(shinyauthr)
-library(shiny)
+library(shinymanager)
 
 inactivity <- "function idleTimer() {
 var t = setTimeout(logout, 120000);
