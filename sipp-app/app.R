@@ -52,27 +52,27 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                      argonSidebarMenu(
                        argonSidebarItem(
                          tabName = "home",
-                         icon = icon("th-large"),
+                         icon = argonIcon("tv-2"),
                          icon_color = "primary",
                          "Beranda"
                        ),
                        argonSidebarItem(
-                         tabName = "tabs",
+                         tabName = "hadir",
                          icon = argonIcon(name="books", color = "info"),
                          verify_fa = FALSE,
-                         "Profil Mahasiswa"
+                         "Kehadiran"
                        ),
                        argonSidebarItem(
-                         tabName = "alerts",
-                         icon = argonIcon(name="trophy", color = "success"),
+                         tabName = "nilai",
+                         icon = argonIcon(name="ruler-pencil", color = "success"),
                          verify_fa = FALSE,
-                         "Penilaian"
+                         "Penilaian Diri"
                        ),
                        argonSidebarItem(
-                         tabName = "images",
-                         icon = argonIcon(name="ruler-pencil", color = "warning"),
+                         tabName = "rekap",
+                         icon = argonIcon(name="trophy", color = "warning"),
                          verify_fa = FALSE,
-                         "Presensi Kegiatan"
+                         "Rekapitulasi"
                        ),
                        argonSidebarDivider(),
                        argonSidebarDivider(),
@@ -88,23 +88,76 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          icon = argonIcon(name="spaceship", color = "default"),
                          verify_fa = FALSE,
                          "Tim Penyusun"
-                       )#,
-                       # argonSidebarItem(
-                       #   tabName = "effects",
-                       #   icon = "atom",
-                       #   icon_color = "black",
-                       #   "CSS effects"
-                       # ),
-                       # argonSidebarItem(
-                       #   tabName = "sections",
-                       #   icon = "credit-card",
-                       #   icon_color = "grey",
-                       #   "Sections"
-                       # )
+                       )
+                     )
+                   ),
+                   navbar = argonDashNavbar(
+                     argonRow(
+                       img(src = "images/asrama-pku.png", width = "10%", height = "10%"),
+                       h1(HTML("Asrama PKU IPB"), style = "color:white;font-weight:bold;font-size:220%;")
+                     )
+                   ),
+                   header = argonDashHeader(
+                     gradient = TRUE,
+                     color = "primary",
+                     separator = TRUE,
+                     separator_color = "secondary"
+                   ),
+                   body = argonDashBody(
+                     useShinyjs(),
+                     tags$head(tags$link(rel = "shortcut icon", href = "images/asrama-pku.png")),
+                     argonTabItems(
+                       argonTabItem(
+                         tabName = "home",
+                         argonRow(
+                           h1("Dashboard")
+                         ),
+                         argonRow(
+                           argonColumn(
+                             width = 12,
+                             argonH1("Filter by:", display = 4),
+                             argonTabSet(
+                               id = "filter",
+                               card_wrapper = TRUE,
+                               horizontal = TRUE,
+                               circle = FALSE,
+                               size = "sm",
+                               width = 12,
+                               iconList = lapply(X = 1:4, FUN = argonIcon, name = "bold-right"),
+                               argonTab(
+                                 tabName = "Nama",
+                                 active = FALSE
+                               ),
+                               argonTab(
+                                 tabName = "Jenis Kelamin",
+                                 active = FALSE
+                               ),
+                               argonTab(
+                                 tabName = "Gedung",
+                                 active = TRUE
+                               ),
+                               argonTab(
+                                 tabName = "Kegiatan",
+                                 active = FALSE
+                               )
+                             )
+                           )
+                         )
+                       ),
+                       argonTabItem(
+                         tabName = "hadir"
+                       ),
+                       argonTabItem(
+                         tabName = "nilai"
+                       ),
+                       argonTabItem(
+                         tabName = "rekap"
+                       )
                      )
                    )
-                 )
-                 )
+                  )
+                )
+                 
 
 
 server <- function(input, output, session) {
