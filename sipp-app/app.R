@@ -63,10 +63,16 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          "Kehadiran"
                        ),
                        argonSidebarItem(
-                         tabName = "nilai",
-                         icon = argonIcon(name="ruler-pencil", color = "success"),
+                         tabName = "aktif",
+                         icon = argonIcon(name="active-40", color = "success"),
                          verify_fa = FALSE,
-                         "Penilaian Diri"
+                         "Keaktifan"
+                       ),
+                       argonSidebarItem(
+                         tabName = "langgar",
+                         icon = argonIcon(name="fat-remove", color = "warning"),
+                         verify_fa = FALSE,
+                         "Pelanggaran"
                        ),
                        argonSidebarItem(
                          tabName = "rekap",
