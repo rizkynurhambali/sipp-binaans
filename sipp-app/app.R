@@ -163,6 +163,35 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                            p("Keaktifan insan asrama dalam kegiatan mempunyai kontribusi sebesar ... terhadap nilai akhir")
                          )
                        ),
+                                              argonTabItem(
+                         tabName = "langgar",
+                         argonRow(
+                           h1("Pelanggaran")
+                         ),
+                         argonRow(
+                           argonColumn(
+                             width = 16,
+                             argonH1("Filter by:", display = 4),
+                             argonTabSet(
+                               id = "filter",
+                               card_wrapper = TRUE,
+                               horizontal = TRUE,
+                               circle = FALSE,
+                               size = "sm",
+                               width = 12,
+                               iconList = lapply(X = 1:4, FUN = argonIcon, name = "bold-right"),
+                               argonTab(
+                                 tabName = "Gedung",
+                                 active = FALSE
+                               ),
+                               argonTab(
+                                 tabName = "Lorong",
+                                 active = FALSE
+                               )
+                             )
+                           )
+                         )
+                       ),
                        argonTabItem(
                          tabName = "rekap",
                          argonRow(
