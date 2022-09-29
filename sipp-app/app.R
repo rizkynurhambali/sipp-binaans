@@ -160,7 +160,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          ),
                          argonRow(
                            h1("Pengaruh Poin Keaktifan Terhadap Nilai Akhir"),
-                           p("")
+                           p("Keaktifan insan asrama dalam kegiatan mempunyai kontribusi sebesar ... terhadap nilai akhir")
                          )
                        ),
                        argonTabItem(
