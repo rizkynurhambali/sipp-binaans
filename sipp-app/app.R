@@ -116,7 +116,11 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                        argonTabItem(
                          tabName = "home",
                          argonRow(
-                           h1("Dashboard")
+                           h1("Introducing SIPP BINAAN'S"),
+                           p("SIPP-BINAAN'S adalah aplikasi sistem pusat penilaian insan Asrama yang 
+                              berfungsi untuk memudahkan perhitungan penilaian binaan asrama PKU IPB.
+                              Aplikasi ini dilatarbelakangi karena manjemen pendataan IPP asrama PKU IPB manual,
+                              hal ini sangat kurang sistematis dan kurang terintegrasi")
                          ),
                          argonRow(
                            argonColumn(
@@ -131,7 +135,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                width = 12,
                                iconList = lapply(X = 1:4, FUN = argonIcon, name = "bold-right"),
                                argonTab(
-                                 tabName = "Nama",
+                                 tabName = "NIM",
                                  active = FALSE
                                ),
                                argonTab(
@@ -141,10 +145,6 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                argonTab(
                                  tabName = "Gedung",
                                  active = TRUE
-                               ),
-                               argonTab(
-                                 tabName = "Kegiatan",
-                                 active = FALSE
                                )
                              )
                            )
@@ -154,7 +154,14 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          tabName = "hadir"
                        ),
                        argonTabItem(
-                         tabName = "nilai"
+                         tabName = "aktif",
+                         argonRow(
+                           h1("Keaktifan")
+                         ),
+                         argonRow(
+                           h1("Pengaruh Poin Keaktifan Terhadap Nilai Akhir"),
+                           p("")
+                         )
                        ),
                        argonTabItem(
                          tabName = "rekap"
