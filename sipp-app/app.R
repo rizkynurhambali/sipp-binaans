@@ -117,10 +117,8 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          tabName = "home",
                          argonRow(
                            h1("SIPP BINAAN'S"),
-                           p("SIPP-BINAAN'S adalah aplikasi sistem pusat penilaian insan Asrama yang 
-                              berfungsi untuk memudahkan perhitungan penilaian binaan asrama PKU IPB.
-                              Aplikasi ini dilatarbelakangi karena manjemen pendataan IPP asrama PKU IPB manual,
-                              hal ini sangat kurang sistematis dan kurang terintegrasi")
+                           p("SIPP-BINAAN'S adalah aplikasi Sistem pusat Penilaian Insan Asrama yang 
+                              berfungsi untuk memudahkan perhitungan penilaian binaan asrama PKU IPB.")
                          ),
                          argonRow(
                            argonColumn(
@@ -171,23 +169,21 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                  tabName = "Be New Family (BNF)",
                                  active = FALSE,
                                  argonRow(
-                                   p("Be New Family merupakan kegiatan ...")
+                                   p("Be New Family merupakan kegiatan temu perdana Insan Asrama.")
                                  )
                                ),
                                argonTab(
                                  tabName = "Social Gathering Lorong",
                                  active = FALSE,
                                  argonRow(
-                                   p("Social Gathering Lorong merupakan kegiatan bersosialisai antar insan asrama 
-                                     dalam lingkup lorong tertentu.")
+                                   p("Social Gathering Lorong merupakan kegiatan pembinaan lorong yang bertujuan untuk transfer ilmu serta pengalaman antara SR dan Insan Asrama. Kegiatan ini biasanya diselenggarakan satu kali dalam sebulan.")
                                  )
                                ),
                                argonTab(
                                  tabName = "Social Gathering Gedung",
                                  active = TRUE,
                                  argonRow(
-                                   p("Social Gathering Gedung merupakan kegiatan bersosialisai antar insan asrama 
-                                     dalam lingkup gedung tertentu.")
+                                   p("Social Gathering Gedung merupakan kegiatan pembinaan gedung yang bertujuan untuk meningkatkan wawasan binaan asrama yang diisikan dengan materi tertentu.")
                                  )
                                ),
                                argonTab(
@@ -316,7 +312,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                        div(
                                          id = "tabel_rekap",
                                          tableOutput("tabel_rekap")
-                         )))
+                                       )))
                        ),
                        argonTabItem(
                          tabName = "profile",
@@ -339,28 +335,30 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                  tabName = "Backend Developer",
                                  active = FALSE,
                                  argonRow(
-                                   p("Adley Dityo Valentinus Putra (G14180009);Muhammad Rizky Nurhambali (G14190022);Ummu Hikmah (G14190033)")
-                                 )
+                                   p(HTML("Adley Dityo Valentinus Putra (G14180009) <br/>
+                                   Muhammad Rizky Nurhambali (G14190022) <br/>
+                                   Ummu Hikmah (G14190033)")),
+                                   br(), br())
                                ),
                                argonTab(
                                  tabName = "Frontend Developer",
                                  active = FALSE,
                                  argonRow(
-                                   p("Gita Cahyo Nomi (G14190011); Azzahra Rahmat (G14190045);Sasha Shakila Hersa (G14190062); Elma Meiliana Mursyida (G14190075)")
-                                 )
+                                   p(HTML("Gita Cahyo Nomi (G14190011) <br/>
+                                   Azzahra Rahmat (G14190045) <br/>
+                                   Sasha Shakila Hersa (G14190062) <br/>
+                                   Elma Meilina Mursyida (G14190075)")),
+                                   br(), br(), br())
                                )
                              )
                            )
                          )
-                       ),
-                       argonTabItem(
-                         tabName = "nilai",
-                         h1("Coming Soon")
                        )
                      )
                    )
-                 ))
-                 
+                 )
+)
+
 #Input tabel
 
 #TABEL REKAPITULASI
@@ -373,7 +371,7 @@ keaktifan = c(90, 90, 80, 80)
 pelanggaran = c(0,0,0,0)
 nakhir = c(95, 90, 80, 75)
 mutu = c("A", "A", "A", "B")
-                 
+
 tabel_rekap = data.frame(nim, nama, gedung, lorong, kehadiran, keaktifan, pelanggaran, nakhir, mutu)                 
 colnames(tabel_rekap) = c("NIM", "Nama", "Gedung", "Lorong", "Kehadiran", "Keaktifan", "Pelanggaran", "Nilai Akhir", "Huruf Mutu")
 
@@ -389,16 +387,16 @@ SR2 = c(" ","V"," "," ","V"," "," ")
 
 tabel_user = data.frame(Kewenangan, Admin, Kestari, SR1, SR2)
 colnames(tabel_user) = c("Kewenangan","Admin","Kestari", "SR Gedung", "SR Lorong")
-                 server <- function(input, output, session) {
-                   
-                   result_auth <- secure_server(check_credentials = check_credentials(credentials))
-                   
-                   output$res_auth <- renderPrint({
-                     reactiveValuesToList(result_auth)
-                   })
-                   output$tabel_rekap <- renderTable({tabel_rekap})
-                   output$tabel_user <- renderTable({tabel_user})
-                 }
-                 
-                 # Run the application 
-                 shinyApp(ui = ui, server = server)
+server <- function(input, output, session) {
+  
+  result_auth <- secure_server(check_credentials = check_credentials(credentials))
+  
+  output$res_auth <- renderPrint({
+    reactiveValuesToList(result_auth)
+  })
+  output$tabel_rekap <- renderTable({tabel_rekap})
+  output$tabel_user <- renderTable({tabel_user})
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
