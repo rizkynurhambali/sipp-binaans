@@ -156,7 +156,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                        argonTabItem(
                          tabName = "aktif",
                          argonRow(
-                           h1("Keaktifan"),
+                           h1("Pengaruh Keaktifan Terhadap Nilai AKhir"),
                            p("Keaktifan insan asrama memiliki kontribusi terhadap nilai akhir dan dihitung selama
                            periode masa asrama. Adapun persentasenya sebesar 10%.")
                          ),
