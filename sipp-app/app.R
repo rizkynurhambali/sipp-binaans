@@ -335,7 +335,14 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                              )
                            )
                          )
+                       ),
+                       argonTabItem(
+                         tabName = "nilai",
+                         h1("Coming Soon")
                        )
+                     )
+                   )
+                 )
                  
 
 
