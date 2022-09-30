@@ -1,7 +1,7 @@
 # SIPP-BINAAN'S
-Sistem Pusat Penilaian Insan Asrama (SIPP-BINAANS) merupakan sebuah aplikasi berbasis web untuk mempermudah proses penilaian Insan Asrama IPB University berbasis web yang sebelumnya hanya dilakukan secara manual. 
+Sistem Pusat Penilaian Insan Asrama (SIPP-BINAANS) merupakan sebuah aplikasi berbasis web untuk mempermudah proses penilaian Insan Asrama IPB University yang sebelumnya hanya dilakukan secara manual. 
 
-SIPP-BINAANS ditujukan untuk dapat diakses bagi Senior Resident (SR), Kesekretariatan Asrama, dan tentunya Insan Asrama. Pengguna aplikasi (user) memiliki kewenangan sesuai dengan perannya masing-masing, antara lain:
+SIPP-BINAANS ditujukan untuk dapat diakses bagi Senior Resident (SR) dan Pihak Kesekretariatan Asrama. Pengguna aplikasi (user) memiliki kewenangan sesuai dengan perannya masing-masing, antara lain:
 - menginput data
 - mengubah data
 - menghapus data
