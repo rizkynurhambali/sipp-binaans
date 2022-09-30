@@ -117,10 +117,8 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          tabName = "home",
                          argonRow(
                            h1("SIPP BINAAN'S"),
-                           p("SIPP-BINAAN'S adalah aplikasi sistem pusat penilaian insan Asrama yang 
-                              berfungsi untuk memudahkan perhitungan penilaian binaan asrama PKU IPB.
-                              Aplikasi ini dilatarbelakangi karena manjemen pendataan IPP asrama PKU IPB manual,
-                              hal ini sangat kurang sistematis dan kurang terintegrasi")
+                           p("SIPP-BINAAN'S adalah aplikasi Sistem pusat Penilaian Insan Asrama yang 
+                              berfungsi untuk memudahkan perhitungan penilaian binaan asrama PKU IPB.")
                          ),
                          argonRow(
                            argonColumn(
@@ -171,23 +169,21 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                  tabName = "Be New Family (BNF)",
                                  active = FALSE,
                                  argonRow(
-                                   p("Be New Family merupakan kegiatan ...")
+                                   p("Be New Family merupakan kegiatan temu perdana Insan Asrama")
                                  )
                                ),
                                argonTab(
                                  tabName = "Social Gathering Lorong",
                                  active = FALSE,
                                  argonRow(
-                                   p("Social Gathering Lorong merupakan kegiatan bersosialisai antar insan asrama 
-                                     dalam lingkup lorong tertentu.")
+                                   p("Social Gathering Lorong merupakan kegiatan pembinaan lorong yang bertujuan untuk transfer knowledge antara SR dan Insan Asrama. Kegiata ini biasanya diselenggarakan satu kali dalam sebulan.")
                                  )
                                ),
                                argonTab(
                                  tabName = "Social Gathering Gedung",
                                  active = TRUE,
                                  argonRow(
-                                   p("Social Gathering Gedung merupakan kegiatan bersosialisai antar insan asrama 
-                                     dalam lingkup gedung tertentu.")
+                                   p("Social Gathering Gedung merupakan kegiatan pembinaan gedung yang bertujuan untuk meningkatkan wawasan binaan asrama yang diisikan dengan materi tertentu.")
                                  )
                                ),
                                argonTab(
