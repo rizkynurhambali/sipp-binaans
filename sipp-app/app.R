@@ -151,7 +151,41 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          )
                        ),
                        argonTabItem(
-                         tabName = "hadir"
+                         tabName = "hadir",
+                         argonRow(
+                           h1("Kehadiran")
+                         ),
+                         argonRow(
+                           argonColumn(
+                             width = 12,
+                             argonH1(display = 4),
+                             argonTabSet(
+                               id = "Kegiatan",
+                               card_wrapper = FALSE,
+                               horizontal = TRUE,
+                               circle = FALSE,
+                               size = "sm",
+                               width = 12,
+                               iconList = lapply(X = 1:4, FUN = argonIcon, name = "bold-right"),
+                               argonTab(
+                                 tabName = "Be New Family (BNF)",
+                                 active = FALSE
+                               ),
+                               argonTab(
+                                 tabName = "Social Gathering Lorong",
+                                 active = FALSE
+                               ),
+                               argonTab(
+                                 tabName = "Social Gathering Gedung",
+                                 active = TRUE
+                               ),
+                               argonTab(
+                                 tabName = "Hari Bersih Asrama",
+                                 active = FALSE
+                               )
+                             )
+                           )
+                         )
                        ),
                        argonTabItem(
                          tabName = "aktif",
