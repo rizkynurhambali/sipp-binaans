@@ -300,11 +300,42 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                              )
                            )
                          )
+                       ),
+                       argonTabItem(
+                         tabName = "profile",
+                         argonRow(
+                           h1("Tim Penyusun")
+                         ),
+                         argonRow(
+                           argonColumn(
+                             width = 12,
+                             argonH1(display = 4),
+                             argonTabSet(
+                               id = "Anggota",
+                               card_wrapper = FALSE,
+                               horizontal = TRUE,
+                               circle = FALSE,
+                               size = "sm",
+                               width = 12,
+                               iconList = lapply(X = 1:2, FUN = argonIcon, name = "bold-right"),
+                               argonTab(
+                                 tabName = "Backend Developer",
+                                 active = FALSE,
+                                 argonRow(
+                                   p("Adley Dityo Valentinus Putra (G14180009);Muhammad Rizky Nurhambali (G14190022);Ummu Hikmah (G14190033)")
+                                 )
+                               ),
+                               argonTab(
+                                 tabName = "Frontend Developer",
+                                 active = FALSE,
+                                 argonRow(
+                                   p("Gita Cahyo Nomi (G14190011); Azzahra Rahmat (G14190045);Sasha Shakila Hersa (G14190062); Elma Meiliana Mursyida (G14190075)")
+                                 )
+                               )
+                             )
+                           )
+                         )
                        )
-                     )
-                   )
-                 )
-)
                  
 
 
