@@ -18,10 +18,10 @@ Salam Hangat,
 
 Tim Penyusun
 
-Muhammad Rizky Nurhambali G14190022
-Sasha Shakila G14190062
-Azzahra Rahmat G14190045
-Ummu Hikmah G14190033
-Elma Meilina Mursyida G14190075
-Gita Cahyo Nomi G14190011
-Adley Dityo Valentinus Putra G14180009
+- Muhammad Rizky Nurhambali G14190022
+- Sasha Shakila G14190062
+- Azzahra Rahmat G14190045
+- Ummu Hikmah G14190033
+- Elma Meilina Mursyida G14190075
+- Gita Cahyo Nomi G14190011
+- Adley Dityo Valentinus Putra G14180009
