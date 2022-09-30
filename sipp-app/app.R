@@ -116,7 +116,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                        argonTabItem(
                          tabName = "home",
                          argonRow(
-                           h1("Introducing SIPP BINAAN'S"),
+                           h1("SIPP BINAAN'S"),
                            p("SIPP-BINAAN'S adalah aplikasi sistem pusat penilaian insan Asrama yang 
                               berfungsi untuk memudahkan perhitungan penilaian binaan asrama PKU IPB.
                               Aplikasi ini dilatarbelakangi karena manjemen pendataan IPP asrama PKU IPB manual,
@@ -298,8 +298,12 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                  tabName = "Nilai"
                                )
                              )
-                           )
-                         )
+                           ),
+                           argonColumn(width = 12,
+                                       div(
+                                         id = "tabel_rekap",
+                                         tableOutput("tabel_rekap")
+                         )))
                        ),
                        argonTabItem(
                          tabName = "profile",
@@ -342,18 +346,32 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                        )
                      )
                    )
-                 )
+                 ))
                  
+#Input tabel
+#TABEL REKAPITULASI
+nim = c("A14190001", "A14190003", "A24190005", "A34190045")
+nama = c("Ahmad Perta", "Muhammad Aril", "Oktaviansyah Putra", "Vino Harahap")
+gedung = c("C1", "C2", "C2", "C3")
+lorong = c("1", "1", "3", "2")
+kehadiran = c(100, 90, 80, 70)
+keaktifan = c(90, 90, 80, 80)
+pelanggaran = c(0,0,0,0)
+nakhir = c(95, 90, 80, 75)
+mutu = c("A", "A", "A", "B")
+                 
+tabel_rekap = data.frame(nim, nama, gedung, lorong, kehadiran, keaktifan, pelanggaran, nakhir, mutu)                 
+colnames(tabel_rekap) = c("NIM", "Nama", "Gedung", "Lorong", "Kehadiran", "Keaktifan", "Pelanggaran", "Nilai Akhir", "Huruf Mutu")
 
-
-server <- function(input, output, session) {
-  
-  result_auth <- secure_server(check_credentials = check_credentials(credentials))
-  
-  output$res_auth <- renderPrint({
-    reactiveValuesToList(result_auth)
-  })
-  
-}
-# Run the application 
-shinyApp(ui = ui, server = server)
+                 server <- function(input, output, session) {
+                   
+                   result_auth <- secure_server(check_credentials = check_credentials(credentials))
+                   
+                   output$res_auth <- renderPrint({
+                     reactiveValuesToList(result_auth)
+                   })
+                   output$tabel_rekap <- renderTable({tabel_rekap})
+                 }
+                 
+                 # Run the application 
+                 shinyApp(ui = ui, server = server)
