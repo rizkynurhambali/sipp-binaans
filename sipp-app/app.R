@@ -169,19 +169,34 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                                iconList = lapply(X = 1:4, FUN = argonIcon, name = "bold-right"),
                                argonTab(
                                  tabName = "Be New Family (BNF)",
-                                 active = FALSE
+                                 active = FALSE,
+                                 argonRow(
+                                   p("Be New Family merupakan kegiatan ...")
+                                 )
                                ),
                                argonTab(
                                  tabName = "Social Gathering Lorong",
-                                 active = FALSE
+                                 active = FALSE,
+                                 argonRow(
+                                   p("Social Gathering Lorong merupakan kegiatan bersosialisai antar insan asrama 
+                                     dalam lingkup lorong tertentu.")
+                                 )
                                ),
                                argonTab(
                                  tabName = "Social Gathering Gedung",
-                                 active = TRUE
+                                 active = TRUE,
+                                 argonRow(
+                                   p("Social Gathering Gedung merupakan kegiatan bersosialisai antar insan asrama 
+                                     dalam lingkup gedung tertentu.")
+                                 )
                                ),
                                argonTab(
                                  tabName = "Hari Bersih Asrama",
-                                 active = FALSE
+                                 active = FALSE,
+                                 argonRow(
+                                   p("Hari Bersih Asrama merupakan kegiatan kerja bakti untuk menjaga kebersihan
+                                     lingkungan asrama.")
+                                 )
                                )
                              )
                            )
