@@ -267,6 +267,19 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                          )
                        ),
                        argonTabItem(
+                         tabName = "badges",
+                         argonRow(
+                           h1("Kewenangan Pengguna"),
+                           p("Laman ini berisikan kewenangan pengguna aplikasi SIPP-BINAAN'S")
+                         ),
+                         argonRow(
+                           argonColumn(width = 12,
+                                       div(
+                                         id = "tabel_user",
+                                         tableOutput("tabel_user")
+                                       )))
+                       ),
+                       argonTabItem(
                          tabName = "rekap",
                          argonRow(
                            h1("Rekapitulasi"),
@@ -349,6 +362,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                  ))
                  
 #Input tabel
+
 #TABEL REKAPITULASI
 nim = c("A14190001", "A14190003", "A24190005", "A34190045")
 nama = c("Ahmad Perta", "Muhammad Aril", "Oktaviansyah Putra", "Vino Harahap")
@@ -363,6 +377,18 @@ mutu = c("A", "A", "A", "B")
 tabel_rekap = data.frame(nim, nama, gedung, lorong, kehadiran, keaktifan, pelanggaran, nakhir, mutu)                 
 colnames(tabel_rekap) = c("NIM", "Nama", "Gedung", "Lorong", "Kehadiran", "Keaktifan", "Pelanggaran", "Nilai Akhir", "Huruf Mutu")
 
+#TABEL USER
+Kewenangan = c ("Mengubah beranda", "Mengisi kehadiran insan",
+                "Mengubah kehadiran insan",
+                "Mengubah penjelasan dan tabel kehadiran", "Mengisi pelanggaran insan",
+                "Mengubah pelanggaran insan","Mengubah penjelasan dan tabel pelanggaran")
+Admin = c("V","V","V","V","V","V","V")
+Kestari = c(" ","V","V"," ","V","V"," ")
+SR1 = c(" ","V"," "," ","V"," "," ")
+SR2 = c(" ","V"," "," ","V"," "," ")
+
+tabel_user = data.frame(Kewenangan, Admin, Kestari, SR1, SR2)
+colnames(tabel_user) = c("Kewenangan","Admin","Kestari", "SR Gedung", "SR Lorong")
                  server <- function(input, output, session) {
                    
                    result_auth <- secure_server(check_credentials = check_credentials(credentials))
@@ -371,6 +397,7 @@ colnames(tabel_rekap) = c("NIM", "Nama", "Gedung", "Lorong", "Kehadiran", "Keakt
                      reactiveValuesToList(result_auth)
                    })
                    output$tabel_rekap <- renderTable({tabel_rekap})
+                   output$tabel_user <- renderTable({tabel_user})
                  }
                  
                  # Run the application 
