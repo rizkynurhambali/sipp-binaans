@@ -186,10 +186,14 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                            )
                          )
                        ),
-                                              argonTabItem(
+                       argonTabItem(
                          tabName = "langgar",
                          argonRow(
-                           h1("Pelanggaran")
+                           h1("Pelanggaran"),
+                           p("Pelanggaran terbagi menjadi tiga kategori, yaitu pelanggaran ringan, sedang, dan berat. 
+                           Pelanggaran ringan menyebabkan pengurangan nilai akhir sebesar 1%. 
+                           Pelanggaran sedang menyebabkan pengurangan nilai akhir sebesar 5%.
+                           Pelanggaran berat menyebabkan pengurangan nilai akhir sebesar 10%.")
                          ),
                          argonRow(
                            argonColumn(
@@ -218,7 +222,10 @@ ui <- secure_app(head_auth = tags$script(inactivity),
                        argonTabItem(
                          tabName = "rekap",
                          argonRow(
-                           h1("Rekapitulasi")
+                           h1("Rekapitulasi"),
+                           p("Persentase kehadiran terhadap nilai akhir adalah sebesar 90%.
+                             Persentase keaktifan terhadap nilai akhir adalah sebesar 10%.
+                             Sedangkan, pelanggaran mengakibatkan pengurangan nilai akhir sebesar persentase kumulatif pelanggaran yang dilakukan insan asrama.")
                          ),
                          argonRow(
                            argonColumn(
