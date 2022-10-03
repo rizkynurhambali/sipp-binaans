@@ -28,4 +28,5 @@ Tim Penyusun
 
 ## Tautan Aplikasi
 https://rizkynurhambali.shinyapps.io/Sipp-Binaans/
+
 Catatan: masih terkendala dalam mengoneksikan dengan database online sehingga jika load data akan menghasilkan error.
