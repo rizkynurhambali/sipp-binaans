@@ -25,3 +25,7 @@ Tim Penyusun
 - Elma Meilina Mursyida G14190075
 - Gita Cahyo Nomi G14190011
 - Adley Dityo Valentinus Putra G14180009
+
+## Tautan Aplikasi
+https://rizkynurhambali.shinyapps.io/Sipp-Binaans/
+Catatan: masih terkendala dalam mengoneksikan dengan database online sehingga jika load data akan menghasilkan error.
