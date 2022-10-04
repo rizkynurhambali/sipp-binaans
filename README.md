@@ -30,3 +30,7 @@ Tim Penyusun
 https://rizkynurhambali.shinyapps.io/Sipp-Binaans/
 
 Catatan: masih terkendala dalam mengoneksikan dengan database online sehingga jika load data akan menghasilkan error.
+
+Apabila ingin melakukan demo, user dapat login dengan username dan password sebagai berikut.
+
+username (password): admin(admin), sr(sr), kestari(kestari).
